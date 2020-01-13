@@ -1,11 +1,11 @@
 export class Publication {
     titulo:string;
     contenido:string;
-    subtitulo:string;
+    img:string;
 
-    constructor(titulo?:string, contenido?:string, subtitulo?:string){
+    constructor(titulo?:string, contenido?:string, img?:string){
         this.titulo = titulo;
         this.contenido = contenido;
-        this.subtitulo = subtitulo;
+        this.img = img;
     }
 }
