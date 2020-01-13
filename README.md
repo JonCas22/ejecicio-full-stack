@@ -1,1 +1,0 @@
-# ejecicio-full-stack
