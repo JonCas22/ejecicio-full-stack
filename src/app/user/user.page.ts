@@ -14,7 +14,7 @@ export class UserPage implements OnInit {
   user3:User = new User("Cris", "cristian@gmail.com", "8910");
   user4:User = new User("Tobi", "tobi1@gmail.com", "1112");
   
-  users:User[]=[this.user1, this.user2, this.user3, this.user4];
+  usersArray:User[]=[this.user1, this.user2, this.user3, this.user4];
 
   constructor(public alertController: AlertController) {}
 
@@ -22,7 +22,7 @@ export class UserPage implements OnInit {
   }
 
   isActive(index){
-    if(this.users[index].isActive){
+    if(this.usersArray[index].isActive){
       return "Si";
     }else{
       return "No";
@@ -31,7 +31,7 @@ export class UserPage implements OnInit {
   }
 
   getUsers(){
-    return this.users;
+    return this.usersArray;
   }
 
   onClick(name){
@@ -45,7 +45,7 @@ export class UserPage implements OnInit {
       message: 'Pulsa aceptar si deseas eliminar el usuario',
       buttons: [{ text: 'Cancel', role: 'cancel' },
                 { text: 'Aceptar', handler: ()=>{
-                  this.users.splice(index, 1);
+                  this.usersArray.splice(index, 1);
                 }
                 }
                ]
@@ -58,11 +58,11 @@ export class UserPage implements OnInit {
         header: 'Update Task?',
         cssClass: 'alertDanger',
         message: 'Inserta los nuevos valores a actualizar',
-        inputs: [{ name: 'nombre', value: this.users[index].nombre,  placeholder: 'Nombre'}, {name:'email', value: this.users[index].email, placeholder: 'Email'},
-         {name:'contraseña', value: this.users[index].contraseña,  placeholder: 'Contraseña'}, {name: "active", type:"checkbox", checked:true, label:"Usuario Activo?"}],
+        inputs: [{ name: 'nombre', value: this.usersArray[index].nombre,  placeholder: 'Nombre'}, {name:'email', value: this.usersArray[index].email, placeholder: 'Email'},
+         {name:'contraseña', value: this.usersArray[index].contraseña,  placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Update', handler:  data => {
-                      this.users[index].nombre = data.nombre; this.users[index].email = data.email; this.users[index].contraseña = data.contraseña; this.users[index].isActive = data.active.checked }
+                      this.usersArray[index].nombre = data.nombre; this.usersArray[index].email = data.email; this.usersArray[index].contraseña = data.contraseña;}
                   }
                  ]
     });
@@ -77,11 +77,20 @@ export class UserPage implements OnInit {
         {name:'contraseña', placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Añadir', handler:  data => {
-                      let newUser:User = new User(data.nombre, data.email, data.contraseña); this.users.push(newUser) }
+                      let newUser:User = new User(data.nombre, data.email, data.contraseña); this.usersArray.push(newUser) }
                   }
                 ]
     });
     await alert.present();
+    }
+
+    updateActive(index){
+      if(this.usersArray[index].isActive==false){
+        this.usersArray[index].isActive=true;
+      }else{
+        this.usersArray[index].isActive=false;
+      }
+      
     }
 
 }
