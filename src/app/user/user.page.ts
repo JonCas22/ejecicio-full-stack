@@ -8,8 +8,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./user.page.scss'],
 })
 export class UserPage implements OnInit {
-
-
+  
   user1:User = new User("Jon", "joncas@gmail.com","1234");
   user2:User = new User("Olek", "okel@gmail.com", "4567");
   user3:User = new User("Cris", "cristian@gmail.com", "8910");
