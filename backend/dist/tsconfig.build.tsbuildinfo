@@ -2149,8 +2149,24 @@
         "version": "7f5a45e119d2916e979a5c6850500822af6cffa7f41da29e0057932e4a999b43",
         "signature": "482b8f0d35a3d453500a15b6c6057c1e4c40baa4329b39da9e1026d8e1de4329"
       },
+      "../src/publication/publication.entity.ts": {
+        "version": "dd99d9fe51b63b672ee7cdbd872bebb6e03520654bc4e51206b904fbe2b0f559",
+        "signature": "77a96a9165b1bfee07a704c19b0f57fd200c17406a9cb904471427d02af1dc13"
+      },
+      "../src/publication/publication/publication.service.ts": {
+        "version": "6b2f960182871b39293ae3527d46ce74b6dedf239c3d257c276ed4aaf66a5885",
+        "signature": "b6c14d1814b8c394115fcbd8fb1f67d834ab61c6e5a046f2de9a77d8058df9e3"
+      },
+      "../src/publication/publication/publication.controller.ts": {
+        "version": "5feeae48704292e2669a11568ed029c5473a03f5a3f59834ca27f9e5b4f9a562",
+        "signature": "ec877c2ea7f489e1f335b4d255dc9b03dd4cef9fec23da1e851aa785598cb267"
+      },
+      "../src/publication/publication.module.ts": {
+        "version": "daedaf096022b5823402d6162a7f9c908756048e2e170815055cd56a54944449",
+        "signature": "3522b150e3a633d8cdb51acdcc3fb3947685d4c567217f46837762c9fc4ff003"
+      },
       "../src/app.module.ts": {
-        "version": "0dbd3ac2031ad84aac28ef81eeec26433abc8f6bde0ea9c4f7f414cce60a5983",
+        "version": "43497c59868e2eb880e7dffc41aa7b4160bfb4836bcc8b759d14204bb97ff25e",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644"
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -6942,12 +6958,50 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/publication/publication.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/publication/publication/publication.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/publication/publication.entity.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/publication/publication/publication.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/publication/publication.entity.ts",
+        "../src/publication/publication/publication.service.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/publication/publication.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/publication/publication.entity.ts",
+        "../src/publication/publication/publication.service.ts",
+        "../src/publication/publication/publication.controller.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/user/user.module.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/publication/publication.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -12551,6 +12605,14 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/publication/publication/publication.controller.ts": [
+        "../src/publication/publication/publication.service.ts",
+        "../src/publication/publication.entity.ts"
+      ],
+      "../src/publication/publication/publication.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/publication/publication.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -13163,6 +13225,10 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
+      "../src/publication/publication.entity.ts",
+      "../src/publication/publication/publication.controller.ts",
+      "../src/publication/publication/publication.service.ts",
+      "../src/publication/publication.module.ts",
       "../src/app.module.ts"
     ]
   },
