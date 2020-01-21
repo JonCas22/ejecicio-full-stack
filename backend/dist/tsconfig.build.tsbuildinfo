@@ -12034,14 +12034,6 @@
         "../src/user/user/user.service.ts",
         "../src/user/user.entity.ts"
       ],
-      "../src/publication/publication/publication.service.ts": [
-        "../node_modules/typeorm/index.d.ts",
-        "../src/publication/publication.entity.ts"
-      ],
-      "../src/publication/publication/publication.controller.ts": [
-        "../src/publication/publication/publication.service.ts",
-        "../src/publication/publication.entity.ts"
-      ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/common/interfaces/index.d.ts",
@@ -12613,6 +12605,14 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/publication/publication/publication.controller.ts": [
+        "../src/publication/publication/publication.service.ts",
+        "../src/publication/publication.entity.ts"
+      ],
+      "../src/publication/publication/publication.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/publication/publication.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -13153,9 +13153,6 @@
       "../src/user/user/user.service.ts",
       "../src/user/user/user.controller.ts",
       "../src/user/user.module.ts",
-      "../src/publication/publication.entity.ts",
-      "../src/publication/publication/publication.service.ts",
-      "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -13228,8 +13225,11 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
+      "../src/publication/publication.entity.ts",
       "../src/publication/publication/publication.controller.ts",
-      "../src/publication/publication.module.ts"
+      "../src/publication/publication/publication.service.ts",
+      "../src/publication/publication.module.ts",
+      "../src/app.module.ts"
     ]
   },
   "version": "3.7.5"
