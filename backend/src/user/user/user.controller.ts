@@ -5,6 +5,7 @@ import { UserEntity } from '../user.entity';
 @Controller('user')
 export class UserController {
 
+
     constructor(private readonly userService: UserService) {}
 
     @Get()
