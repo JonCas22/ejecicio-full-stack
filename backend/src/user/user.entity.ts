@@ -28,7 +28,10 @@ export class UserEntity {
     @Column('date')
     ultima_fecha_modificacion: Date;
    
-   constructor(){}
+   constructor(nombre_usuario?:string, email?:string, avatar?:string, contrasena?:string,
+    isActive?:boolean, clave_activation?:string, grupo_usuarios?:string, apiToken?:string,
+    version?:string, fecha_creacion?:Date, ultima_fecha_modificacion?:Date){}
+
 }
 
 

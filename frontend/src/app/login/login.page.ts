@@ -55,6 +55,8 @@ export class LoginPage implements OnInit {
   login(form){
     console.log(form.value);
     var route = this.router;
+    console.log("Array de usuarios de DDBB " + this.usersDB);
+    
     this.usersDB.map(function(item, index){
       if(item.nombre_usuario==form.value.email&&item.contrasena==form.value.password){
         console.log("Usuario logeado");
@@ -77,7 +79,7 @@ export class LoginPage implements OnInit {
     users.subscribe(result=>{
       if(result.code!=200){
         console.log(result);
-        this.usersDB = result[0];
+        this.usersDB = result;
         console.log(this.usersDB);
         
       }else{

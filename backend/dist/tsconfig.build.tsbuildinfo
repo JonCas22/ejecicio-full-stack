@@ -2102,8 +2102,8 @@
         "signature": "c22b4c00503c6c77dbad4efeb054b7d2a606c8e30b22377a701cf4045a522c5c"
       },
       "../src/user/user.entity.ts": {
-        "version": "8b6a6ea5507d35371cab26d96bb8d837e452f080a4e3c245b42f26fd05fa7df4",
-        "signature": "5e422511eb4df958c6ad671907dbda0e390a5d155d6658231d45f94e06242f80"
+        "version": "63e94205086b6145f48c12102a1bd77b082c758aaefc314e2730c878cb6a7aae",
+        "signature": "5177a74f402e3e5f12a483ddb348eb89d70a43498cd3b08d71f421e275de2769"
       },
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.decorators.d.ts": {
         "version": "41070599270ea1295c8855556f36c89af04d02c41c50f602870fd55dd988c83d",
@@ -12034,6 +12034,14 @@
         "../src/user/user/user.service.ts",
         "../src/user/user.entity.ts"
       ],
+      "../src/publication/publication/publication.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/publication/publication.entity.ts"
+      ],
+      "../src/publication/publication/publication.controller.ts": [
+        "../src/publication/publication/publication.service.ts",
+        "../src/publication/publication.entity.ts"
+      ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/common/interfaces/index.d.ts",
@@ -12605,14 +12613,6 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/publication/publication/publication.controller.ts": [
-        "../src/publication/publication/publication.service.ts",
-        "../src/publication/publication.entity.ts"
-      ],
-      "../src/publication/publication/publication.service.ts": [
-        "../node_modules/typeorm/index.d.ts",
-        "../src/publication/publication.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -13141,7 +13141,6 @@
       "../node_modules/typeorm/naming-strategy/DefaultNamingStrategy.d.ts",
       "../node_modules/typeorm/util/PromiseUtils.d.ts",
       "../node_modules/typeorm/index.d.ts",
-      "../src/user/user.entity.ts",
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.decorators.d.ts",
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.utils.d.ts",
       "../node_modules/@nestjs/typeorm/dist/common/index.d.ts",
@@ -13150,9 +13149,10 @@
       "../node_modules/@nestjs/typeorm/dist/typeorm.module.d.ts",
       "../node_modules/@nestjs/typeorm/dist/index.d.ts",
       "../node_modules/@nestjs/typeorm/index.d.ts",
-      "../src/user/user/user.service.ts",
-      "../src/user/user/user.controller.ts",
-      "../src/user/user.module.ts",
+      "../src/publication/publication.entity.ts",
+      "../src/publication/publication/publication.service.ts",
+      "../src/publication/publication/publication.controller.ts",
+      "../src/publication/publication.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -13225,10 +13225,10 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/publication/publication.entity.ts",
-      "../src/publication/publication/publication.controller.ts",
-      "../src/publication/publication/publication.service.ts",
-      "../src/publication/publication.module.ts",
+      "../src/user/user.entity.ts",
+      "../src/user/user.module.ts",
+      "../src/user/user/user.controller.ts",
+      "../src/user/user/user.service.ts",
       "../src/app.module.ts"
     ]
   },
