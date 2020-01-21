@@ -2142,8 +2142,8 @@
         "signature": "3c8122285fd329bdba22cb6c13316d31963f2931bc4f087cc0bf8f23dd89f155"
       },
       "../src/user/user/user.controller.ts": {
-        "version": "bed622e84324dd6e97b95a285e8dee68c9611e8f6874cdcd6eb1ecbcefd21ab6",
-        "signature": "54cd83b884deeb2f9bb46c2482a704cd337991606ab4d9ff352d13a70898d8b1"
+        "version": "68c895aac3fb01bcfa6173b5efea57f34f50f7e01d4d555d8a88ba43dad7aa40",
+        "signature": "ed451bac34e9b6aaf66b0d2c7b610cea171d200442c18ae1cbb4eeb6a67e5bb6"
       },
       "../src/user/user.module.ts": {
         "version": "7f5a45e119d2916e979a5c6850500822af6cffa7f41da29e0057932e4a999b43",
@@ -13231,11 +13231,11 @@
       "../node_modules/@nestjs/typeorm/dist/index.d.ts",
       "../node_modules/@nestjs/typeorm/index.d.ts",
       "../src/user/user/user.service.ts",
-      "../src/user/user.module.ts",
       "../src/publication/publication.entity.ts",
       "../src/publication/publication/publication.service.ts",
       "../src/publication/publication/publication.controller.ts",
       "../src/publication/publication.module.ts",
+      "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -13271,6 +13271,7 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/index.d.ts",
+      "../src/main.ts",
       "../node_modules/@types/anymatch/index.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
@@ -13312,8 +13313,7 @@
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
       "../src/user/user/user.controller.ts",
-      "../src/app.module.ts",
-      "../src/main.ts"
+      "../src/user/user.module.ts"
     ]
   },
   "version": "3.7.5"
