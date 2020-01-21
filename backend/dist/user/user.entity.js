@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 let UserEntity = class UserEntity {
-    constructor(nombre_usuario, email, avatar, contrasena, isActive, clave_activation, grupo_usuarios, apiToken, version, fecha_creacion, ultima_fecha_modificacion) { }
+    constructor() { }
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
@@ -63,7 +63,7 @@ __decorate([
 ], UserEntity.prototype, "ultima_fecha_modificacion", void 0);
 UserEntity = __decorate([
     typeorm_1.Entity(),
-    __metadata("design:paramtypes", [String, String, String, String, Boolean, String, String, String, String, Date, Date])
+    __metadata("design:paramtypes", [])
 ], UserEntity);
 exports.UserEntity = UserEntity;
 //# sourceMappingURL=user.entity.js.map
