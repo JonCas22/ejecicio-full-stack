@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-import { UserEntity } from '../../../../backend/src/user/user.entity';
+import { UserEntity } from '../user/user.entity';
 import { AlertController } from '@ionic/angular';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Http} from '@angular/http';
 import { Observable } from 'rxjs';
 //import { HttpModule, Http, Response} from '@angular/http';
 
@@ -77,7 +76,7 @@ export class LoginPage implements OnInit {
     users.subscribe(result=>{
       if(result.code!=200){
         console.log(result);
-        this.usersDB = result[0];
+        this.usersDB = result;
         console.log(this.usersDB);
         
       }else{
