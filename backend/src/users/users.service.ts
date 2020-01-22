@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnsupportedMediaTypeException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserEntity } from 'src/user/user.entity';
 import { Repository } from 'typeorm';
@@ -33,8 +33,13 @@ export class UsersService {
   }
 
   
-  async findOne(username: string): Promise<UserEntity> {
-    return this.users.find(user => user.username === username);
+  async findOne(username: string): Promise<any> {
+    // console.log(username);
+    let options= { where: { 'nombre_usuario': username }, take: 1 }
+    // console.log(options);
+    let usuario = this.userRepository.find(options);
+    return usuario;
+    //return this.users.find(u => u.username===username);
   }
   
 }
