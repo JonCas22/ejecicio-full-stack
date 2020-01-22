@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'add-publication',
+    loadChildren: () => import('./add-publication/add-publication.module').then( m => m.AddPublicationPageModule)
   }
 
 ];
