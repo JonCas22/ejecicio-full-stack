@@ -41,7 +41,7 @@ export class RegisterPage implements OnInit {
       this.user.version = "1.0";
       this.user.fecha_creacion = currentime;
       this.user.ultima_fecha_modificacion = currentime;
-      this.user.isActive = 0;
+      this.user.isActive = 1;
       this.user.apiToken = "";
 
       console.log(this.user);
