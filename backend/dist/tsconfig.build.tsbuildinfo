@@ -2154,8 +2154,8 @@
         "signature": "482b8f0d35a3d453500a15b6c6057c1e4c40baa4329b39da9e1026d8e1de4329"
       },
       "../src/publication/publication.entity.ts": {
-        "version": "dd99d9fe51b63b672ee7cdbd872bebb6e03520654bc4e51206b904fbe2b0f559",
-        "signature": "77a96a9165b1bfee07a704c19b0f57fd200c17406a9cb904471427d02af1dc13"
+        "version": "e5124ee6a793b14718c00a96ea4b09d5145b487fe3ab7e4ad13e6d8cd275c58b",
+        "signature": "bea66a4bcdc0b1c1a2ec258de169f522cd697490c43b12e27a223c8149cc16fb"
       },
       "../src/publication/publication/publication.service.ts": {
         "version": "6b2f960182871b39293ae3527d46ce74b6dedf239c3d257c276ed4aaf66a5885",
