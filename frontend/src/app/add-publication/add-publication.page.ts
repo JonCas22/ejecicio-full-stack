@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PublicationEntity } from '../publications/publication.entity';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-publication',
@@ -10,7 +11,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AddPublicationPage implements OnInit {
 
-  constructor(private  router:  Router, private http:HttpClient) { }
+  constructor(private  router:  Router, private http:HttpClient, public alertController: AlertController) { }
 
   publication: PublicationEntity;
 
@@ -54,9 +55,25 @@ export class AddPublicationPage implements OnInit {
           response => {
               console.log("POST call in error", response);
           },
-          () => {
+          async () => {
               console.log("The POST observable is now completed.");
-              //this.router.navigate(["/login"]);
+              
+              const alert = await this.alertController.create({
+                header: 'Exito',
+                message: 'La publicación ha sido guardada con exito',
+                buttons: [
+                  {
+                    text: 'Okay',
+                    handler: () => {
+                      console.log('Confirm Okay');
+                      this.router.navigate(["/publications"]);
+                    }
+                  }
+                ]
+              });
+          
+              await alert.present();
+              
           });
 
       console.log("post done");
