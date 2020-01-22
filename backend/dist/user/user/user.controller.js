@@ -22,16 +22,16 @@ let UserController = class UserController {
     findAll() {
         return this.userService.findAll();
     }
-    create(user) {
-        return this.userService.save(user);
+    create(photo) {
+        return this.userService.save(photo);
     }
     findOne(id) {
         return this.userService.findById(id);
     }
-    async update(id, user) {
+    async update(id, photo) {
         await this.userService.findById(id);
-        user.id = id;
-        return this.userService.save(user);
+        photo.id = id;
+        return this.userService.save(photo);
     }
     remove(id) {
         return this.userService.delete(id);

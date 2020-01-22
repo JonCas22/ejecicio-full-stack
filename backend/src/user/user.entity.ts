@@ -23,10 +23,10 @@ export class UserEntity {
     apiToken: string;
     @Column('text')
     version: string;
-    @Column('date')
-    fecha_creacion: Date;
-    @Column('date')
-    ultima_fecha_modificacion: Date;
+    @Column('text')
+    fecha_creacion: string;
+    @Column('text')
+    ultima_fecha_modificacion: string;
    
    constructor(){}
 }

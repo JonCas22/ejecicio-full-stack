@@ -13,18 +13,18 @@ export class UserController {
     }
 
     @Post()
-    create(@Body() user: UserEntity): Promise<UserEntity> {
-    return this.userService.save(user);
+    create(@Body() photo: UserEntity): Promise<UserEntity> {
+    return this.userService.save(photo);
     }
     @Get(':id')
     findOne(@Param('id') id: number): Promise<UserEntity> {
     return this.userService.findById(id);
     }
     @Put(':id')
-    async update(@Param('id') id: number, @Body() user: UserEntity): Promise<UserEntity> {
+    async update(@Param('id') id: number, @Body() photo: UserEntity): Promise<UserEntity> {
     await this.userService.findById(id);
-    user.id = id;
-    return this.userService.save(user);
+    photo.id = id;
+    return this.userService.save(photo);
     }
     @Delete(':id')
     remove(@Param('id') id: number): Promise<UserEntity> {
