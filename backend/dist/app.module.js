@@ -16,9 +16,10 @@ let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        imports: [user_module_1.UserModule, typeorm_1.TypeOrmModule.forRoot(), publication_module_1.PublicationModule],
+        imports: [user_module_1.UserModule,
+            typeorm_1.TypeOrmModule.forRoot(), publication_module_1.PublicationModule],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [app_service_1.AppService]
     })
 ], AppModule);
 exports.AppModule = AppModule;
