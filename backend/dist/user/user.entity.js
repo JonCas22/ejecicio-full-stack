@@ -54,12 +54,12 @@ __decorate([
     __metadata("design:type", String)
 ], UserEntity.prototype, "version", void 0);
 __decorate([
-    typeorm_1.Column('date'),
-    __metadata("design:type", Date)
+    typeorm_1.Column('text'),
+    __metadata("design:type", String)
 ], UserEntity.prototype, "fecha_creacion", void 0);
 __decorate([
-    typeorm_1.Column('date'),
-    __metadata("design:type", Date)
+    typeorm_1.Column('text'),
+    __metadata("design:type", String)
 ], UserEntity.prototype, "ultima_fecha_modificacion", void 0);
 UserEntity = __decorate([
     typeorm_1.Entity(),

@@ -4,6 +4,7 @@ import { Router } from  "@angular/router";
 import { User } from '../models/user';
 import { UserEntity } from '../user/user.entity';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -23,25 +24,53 @@ export class RegisterPage implements OnInit {
   register(form) {
     console.log(form);
     // console.log(form.value.name)
-    try {
 
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+
+    var yyyy = today.getFullYear();
+
+    var currentime = yyyy + "/" + mm + "/" + dd;
+
+    try {
       
       this.user.avatar="";
       this.user.clave_activacion = "";
       this.user.grupo_usuarios="default";
       this.user.version = "1.0";
-      this.user.fecha_creacion = new Date();
-      this.user.ultima_fecha_modificacion = new Date();
-      this.user.isActive = 0;
+      this.user.fecha_creacion = currentime;
+      this.user.ultima_fecha_modificacion = currentime;
+      this.user.isActive = 1;
       this.user.apiToken = "";
 
       console.log(this.user);
 
-      let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    
-      this.http.post('http://localhost:3000/user', this.user, {headers: headers});
+      //let headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-      //this.router.navigate(["/login", user]);
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+        })
+      };
+    
+      this.http.post('http://localhost:3000/user', this.user, httpOptions)
+      .subscribe(
+          (val) => {
+              console.log("POST call successful value returned in body");
+          },
+          response => {
+              console.log("POST call in error", response);
+          },
+          () => {
+              console.log("The POST observable is now completed.");
+              this.router.navigate(["/login"]);
+          });
+
+      console.log("post done");
+      
+
+      
       
     } catch (error) {
       console.log(error);

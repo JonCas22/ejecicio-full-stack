@@ -55,11 +55,11 @@ export class LoginPage implements OnInit {
     console.log(form.value);
     var route = this.router;
     this.usersDB.map(function(item, index){
-      if(item.nombre_usuario==form.value.email&&item.contrasena==form.value.password){
+      if(item.nombre_usuario==form.value.email&&item.contrasena==form.value.password && item.isActive==1){
         console.log("Usuario logeado");
         route.navigate(['/user']);
       }else{
-        console.log("Usuario no logeado, usuario/contraseña incorrecta");
+        console.log("Usuario no logeado, usuario/contraseña incorrecta o usuario no activo");
       }
     });
   }

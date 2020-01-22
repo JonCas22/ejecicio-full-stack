@@ -9,7 +9,7 @@ export declare class UserEntity {
     grupo_usuarios: string;
     apiToken: string;
     version: string;
-    fecha_creacion: Date;
-    ultima_fecha_modificacion: Date;
+    fecha_creacion: string;
+    ultima_fecha_modificacion: string;
     constructor();
 }

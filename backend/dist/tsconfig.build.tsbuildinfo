@@ -2102,8 +2102,8 @@
         "signature": "c22b4c00503c6c77dbad4efeb054b7d2a606c8e30b22377a701cf4045a522c5c"
       },
       "../src/user/user.entity.ts": {
-        "version": "8b6a6ea5507d35371cab26d96bb8d837e452f080a4e3c245b42f26fd05fa7df4",
-        "signature": "5e422511eb4df958c6ad671907dbda0e390a5d155d6658231d45f94e06242f80"
+        "version": "7df464f7c8643721b6e3300d7c494a77c914004fdd46dbeeb9e56fc5fe48e363",
+        "signature": "4e8a9bf36539863c090afcf107155dcdf0c29b74f902fb0381a6ab7961746673"
       },
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.decorators.d.ts": {
         "version": "41070599270ea1295c8855556f36c89af04d02c41c50f602870fd55dd988c83d",
@@ -13686,7 +13686,6 @@
       "../node_modules/typeorm/naming-strategy/DefaultNamingStrategy.d.ts",
       "../node_modules/typeorm/util/PromiseUtils.d.ts",
       "../node_modules/typeorm/index.d.ts",
-      "../src/user/user.entity.ts",
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.decorators.d.ts",
       "../node_modules/@nestjs/typeorm/dist/common/typeorm.utils.d.ts",
       "../node_modules/@nestjs/typeorm/dist/common/index.d.ts",
@@ -13695,14 +13694,10 @@
       "../node_modules/@nestjs/typeorm/dist/typeorm.module.d.ts",
       "../node_modules/@nestjs/typeorm/dist/index.d.ts",
       "../node_modules/@nestjs/typeorm/index.d.ts",
-      "../src/user/user/user.service.ts",
-      "../src/user/user/user.controller.ts",
-      "../src/user/user.module.ts",
       "../src/publication/publication.entity.ts",
       "../src/publication/publication/publication.service.ts",
       "../src/publication/publication/publication.controller.ts",
       "../src/publication/publication.module.ts",
-      "../src/users/users.service.ts",
       "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
       "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts",
@@ -13710,7 +13705,6 @@
       "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts",
       "../node_modules/@nestjs/jwt/dist/index.d.ts",
       "../node_modules/@nestjs/jwt/index.d.ts",
-      "../src/users/users.module.ts",
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts",
       "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts",
       "../node_modules/@nestjs/passport/dist/interfaces/type.interface.d.ts",
@@ -13731,13 +13725,9 @@
       "../node_modules/@types/passport/index.d.ts",
       "../node_modules/@types/passport-strategy/index.d.ts",
       "../node_modules/@types/passport-local/index.d.ts",
-      "../src/auth/local.strategy.ts",
-      "../src/auth/auth.controller.ts",
       "../src/auth/constants.ts",
       "../node_modules/@types/passport-jwt/index.d.ts",
       "../src/auth/jwt.strategy.ts",
-      "../src/auth/auth.module.ts",
-      "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -13803,7 +13793,17 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/auth/auth.service.ts"
+      "../src/user/user.entity.ts",
+      "../src/users/users.module.ts",
+      "../src/users/users.service.ts",
+      "../src/user/user.module.ts",
+      "../src/user/user/user.controller.ts",
+      "../src/user/user/user.service.ts",
+      "../src/auth/auth.service.ts",
+      "../src/auth/local.strategy.ts",
+      "../src/auth/auth.controller.ts",
+      "../src/auth/auth.module.ts",
+      "../src/app.module.ts"
     ]
   },
   "version": "3.7.5"
