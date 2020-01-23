@@ -14,12 +14,14 @@ const typeorm_1 = require("@nestjs/typeorm");
 const publication_module_1 = require("./publication/publication.module");
 const auth_module_1 = require("./auth/auth.module");
 const users_module_1 = require("./users/users.module");
+const menus_module_1 = require("./menus/menus.module");
+const menu_item_module_1 = require("./menu-item/menu-item.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [user_module_1.UserModule,
-            typeorm_1.TypeOrmModule.forRoot(), publication_module_1.PublicationModule, auth_module_1.AuthModule, users_module_1.UsersModule],
+            typeorm_1.TypeOrmModule.forRoot(), publication_module_1.PublicationModule, auth_module_1.AuthModule, users_module_1.UsersModule, menus_module_1.MenusModule, menu_item_module_1.MenuItemModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService]
     })
