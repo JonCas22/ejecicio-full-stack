@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { AlertController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UserEntity } from './user.entity';
+import { UserServiceService } from './services/user-service.service';
 
 @Component({
   selector: 'app-user',
@@ -15,23 +19,22 @@ export class UserPage implements OnInit {
   user4:User = new User("Tobi", "tobi1@gmail.com", "1112");
   
   usersArray:User[]=[this.user1, this.user2, this.user3, this.user4];
+  usersArrayDDBB = [];
 
-  constructor(public alertController: AlertController) {}
+  user: UserEntity;
+
+  constructor(public alertController: AlertController,
+    private userService: UserServiceService) {}
 
   ngOnInit() {
+    this.user= new UserEntity();
+    this.usersArrayDDBB = this.userService.getUsers();
+
   }
 
-  isActive(index){
-    if(this.usersArray[index].isActive){
-      return "Si";
-    }else{
-      return "No";
-    }
-    
-  }
-
-  getUsers(){
-    return this.usersArray;
+  ionViewWillEnter(){
+    console.log("Is entering");
+    this.usersArrayDDBB = this.userService.getUsers();
   }
 
   onClick(name){
@@ -77,7 +80,8 @@ export class UserPage implements OnInit {
         {name:'contraseña', placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Añadir', handler:  data => {
-                      let newUser:User = new User(data.nombre, data.email, data.contraseña); this.usersArray.push(newUser) }
+                      this.userService.register(data.nombre, data.email, data.contraseña);
+                     }
                   }
                 ]
     });
@@ -85,12 +89,11 @@ export class UserPage implements OnInit {
     }
 
     updateActive(index){
-      if(this.usersArray[index].isActive==false){
-        this.usersArray[index].isActive=true;
-      }else{
-        this.usersArray[index].isActive=false;
-      }
+      console.log("Usuario es " + this.usersArrayDDBB[index].id);
       
+      this.usersArrayDDBB[index].isActive= !this.usersArrayDDBB[index].isActive;
+      // guardar el objeto para actualizar
+      this.userService.updateIsActive(index);
     }
 
 }
