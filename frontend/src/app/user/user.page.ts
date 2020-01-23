@@ -67,16 +67,17 @@ export class UserPage implements OnInit {
   await alert.present();
   }
 
-  async updateTask(index) {
+  async updateTask(item) {
     let alert = await this.alertController.create({
         header: 'Update Task?',
         cssClass: 'alertDanger',
         message: 'Inserta los nuevos valores a actualizar',
-        inputs: [{ name: 'nombre', value: this.usersArrayDDBB[index].nombre_usuario,  placeholder: 'Nombre'}, {name:'email', value: this.usersArrayDDBB[index].email, placeholder: 'Email'},
-         {name:'contraseña', value: this.usersArrayDDBB[index].contrasena,  placeholder: 'Contraseña'}],
+        inputs: [{ name: 'nombre', value: item.nombre_usuario,  placeholder: 'Nombre'}, {name:'email', value: item.email, placeholder: 'Email'},
+         {name:'contraseña', value: item.contrasena,  placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Update', handler:  data => {
-                      this.usersArrayDDBB[index].nombre_usuario = data.nombre; this.usersArrayDDBB[index].email = data.email; this.usersArrayDDBB[index].contrasena = data.contraseña;}
+                     this.userService.update(data, item);
+                  }
                   }
                  ]
     });

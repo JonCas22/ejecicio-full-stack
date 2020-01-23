@@ -41,6 +41,38 @@ export class UserServiceService {
     
   }
 
+  update(data, item){
+    console.log("Updating");
+    console.log(item);
+    console.log(data);
+    
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      })
+    };
+
+    item.nombre_usuario = data.nombre;
+    item.email = data.email;
+    item.contrasena = data.contraseña;
+
+    
+    this.http.put('http://localhost:3000/user/' + item.id, item, httpOptions).subscribe(
+      (val) => {
+          console.log("PUT call successful value returned in body");
+          console.log(val);
+          
+      },
+      response => {
+          console.log("PUT call in error", response);
+      },
+      () => {
+          console.log("The PUT observable is now completed.");
+          window.location.reload();
+      });
+  }
+
   register(data) {
     // console.log(form.value.name)
     try {
