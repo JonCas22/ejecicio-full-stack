@@ -16,7 +16,6 @@ export class UserServiceService {
   user: UserEntity;
 
   getUsers(){
-    this.askForUsers();
     return this.usersArrayDDBB;
   }
 
@@ -25,26 +24,11 @@ export class UserServiceService {
     //console.log("Get: " + JSON.stringify(users));
   } 
 
-  askForUsers(){
-    var publications = this.getUsersFromDDBB();
-    publications.subscribe(result=>{
-      if(result.code!=200){
-        console.log(result);
-        this.usersArrayDDBB = result;
-        console.log(this.usersArrayDDBB);
-        
-      }else{
-        console.log("problemas");
-      }
-    },
-    error=>{
-      console.log(<any>error);
-      
-    })
-  }
 
-  updateIsActive(index){
+  updateIsActive(user){
     console.log("Updating active");
+    console.log(user);
+    
     
     const httpOptions = {
       headers: new HttpHeaders({
@@ -53,19 +37,8 @@ export class UserServiceService {
     };
 
     
-    this.http.put('http://localhost:3000/user/' + this.usersArrayDDBB[index].id, httpOptions)
-    .subscribe(
-        (val) => {
-            console.log("POST call successful value returned in body");
-        },
-        response => {
-            console.log("POST call in error", response);
-        },
-        () => {
-            console.log("The POST observable is now completed.");
-            //window.location.reload();
-        });;
-
+    return this.http.put('http://localhost:3000/user/' + user.id, user, httpOptions)
+    
   }
 
   register(nombre, email, contraseña) {
