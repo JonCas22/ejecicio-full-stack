@@ -14,7 +14,7 @@
   
   <ion-grid color="#ffff">
     <ion-row *ngFor="let item of publicationArrayDDBB">
-      <ion-col>
+      <ion-col  *ngIf="item.publicado">
         <ion-card (click)="doSomething(item)">
           <ion-card-header>
             <ion-img src="{{item.imagen_portada}}"></ion-img>
