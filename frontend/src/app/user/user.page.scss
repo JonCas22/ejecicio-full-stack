@@ -3,7 +3,7 @@ a{
 }
 
 ion-item{
-    --background: #3880ff;
+    --background: #ff0a0a;
     --color: #fff;
 }
 ion-button{
@@ -12,7 +12,9 @@ ion-button{
 
 ion-col{
     text-align: center;
+    color: white;
 }
+
 
 .tableHeader{
     font-size: larger;
@@ -22,5 +24,8 @@ ion-col{
 width: fit-content;
 text-align: center;
 }
-
-
+tolbar-container{color:white;
+}
+ion-content {
+   color:secondary;
+  }

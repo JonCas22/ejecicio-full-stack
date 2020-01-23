@@ -4,15 +4,15 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #f04141;
   --ion-color-primary-rgb: 56, 128, 255;
-  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast: #ffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #3171e0;
   --ion-color-primary-tint: #4c8dff;
 
   /** secondary **/
-  --ion-color-secondary: #0cd1e8;
+  --ion-color-secondary: #3171e0;
   --ion-color-secondary-rgb: 12, 209, 232;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
@@ -74,4 +74,44 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** olek **/
+  --ion-color-olek: #e97e7e;
+  --ion-color-olek-rgb: 233,126,126;
+  --ion-color-olek-contrast: #000000;
+  --ion-color-olek-contrast-rgb: 0,0,0;
+  --ion-color-olek-shade: #cd6f6f;
+  --ion-color-olek-tint: #eb8b8b;
+
+
+  .ion-color-olek {
+    --ion-color-base: var(--ion-color-olek);
+    --ion-color-base-rgb: var(--ion-color-olek-rgb);
+    --ion-color-contrast: var(--ion-color-olek-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-olek-contrast-rgb);
+    --ion-color-shade: var(--ion-color-olek-shade);
+    --ion-color-tint: var(--ion-color-olek-tint);
+  }
+  
+
 }
+/*olekk*/
+
+:root {
+  --ion-color-olekk: #000000;
+  --ion-color-olekk-rgb: 0,0,0;
+  --ion-color-olekk-contrast: #ffffff;
+  --ion-color-olekk-contrast-rgb: 255,255,255;
+  --ion-color-olekk-shade: #000000;
+  --ion-color-olekk-tint: #1a1a1a;
+}
+
+.ion-color-olekk {
+  --ion-color-base: var(--ion-color-olekk);
+  --ion-color-base-rgb: var(--ion-color-olekk-rgb);
+  --ion-color-contrast: var(--ion-color-olekk-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-olekk-contrast-rgb);
+  --ion-color-shade: var(--ion-color-olekk-shade);
+  --ion-color-tint: var(--ion-color-olekk-tint);
+}
+

@@ -35,6 +35,8 @@ export class UserPage implements OnInit {
   ionViewWillEnter(){
     console.log("Is entering");
     this.usersArrayDDBB = this.userService.getUsers();
+    console.log(this.usersArrayDDBB);
+    
   }
 
   onClick(name){

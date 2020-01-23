@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="white">
     <ion-buttons slot="start">
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
@@ -10,9 +10,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="secondary">
   
-  <ion-grid>
+  <ion-grid color="#ffff">
     <ion-row *ngFor="let item of publicationArrayDDBB">
       <ion-col>
         <ion-card (click)="doSomething(item)">
