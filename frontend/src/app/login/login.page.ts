@@ -55,7 +55,7 @@ export class LoginPage implements OnInit {
     console.log(form.value);
     var route = this.router;
     this.usersDB.map(function(item, index){
-      if(item.nombre_usuario==form.value.email&&item.contrasena==form.value.password && item.isActive==1){
+      if(item.nombre_usuario==form.value.email&&item.contrasena==form.value.password && item.isActive!=0){
         console.log("Usuario logeado");
         route.navigate(['/user']);
       }else{
