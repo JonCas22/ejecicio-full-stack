@@ -6,6 +6,7 @@ import { AlertController } from '@ionic/angular';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UserServiceService } from '../user/services/user-service.service';
 //import { HttpModule, Http, Response} from '@angular/http';
 
 @Component({
@@ -32,7 +33,7 @@ export class LoginPage implements OnInit {
   apiUrl:string = 'http://localhost:3000/user';
 
   constructor(public alertController: AlertController, private router: Router,
-    private route: ActivatedRoute, private http:HttpClient) {
+    private route: ActivatedRoute, private http:HttpClient, private userService:UserServiceService) {
       this.askForUser();
   }
 
@@ -55,7 +56,7 @@ export class LoginPage implements OnInit {
     console.log(form.value);
     var route = this.router;
     this.usersDB.map(function(item, index){
-      if(item.nombre_usuario==form.value.email&&item.contrasena==form.value.password && item.isActive==1){
+      if(item.nombre_usuario==form.value.email&&item.contrasena==form.value.password && item.isActive!=0){
         console.log("Usuario logeado");
         route.navigate(['/user']);
       }else{

@@ -26,6 +26,12 @@ publicationArray = [{titulo: 'Titulo1', contenido: 'Hola esta es una publicacion
     this.askForPublications();
   }
 
+  ionViewWillEnter(){
+    console.log("Is entering");
+    this.askForPublications();
+  }
+  
+
   askForPublications(){
     var publications = this.getPublications();
     publications.subscribe(result=>{
