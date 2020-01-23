@@ -28,16 +28,25 @@ export class UserPage implements OnInit {
 
   ngOnInit() {
     this.user= new UserEntity();
-    this.usersArrayDDBB = this.userService.getUsers();
+    this.reloadData();
 
   }
-
-  ionViewWillEnter(){
-    console.log("Is entering");
-    this.usersArrayDDBB = this.userService.getUsers();
-    console.log(this.usersArrayDDBB);
-    
+  reloadData(){
+    this.userService.getUsersFromDDBB().subscribe(
+      (val) => {
+          console.log("POST call successful value returned in body");
+          console.log(val);
+          this.usersArrayDDBB = val;
+      },
+      response => {
+          console.log("POST call in error", response);
+      },
+      () => {
+          console.log("The POST observable is now completed.");
+          //window.location.reload();
+      }); ;
   }
+
 
   onClick(name){
     alert("has pulsado el usuario =>" + name);
@@ -90,12 +99,30 @@ export class UserPage implements OnInit {
     await alert.present();
     }
 
-    updateActive(index){
-      console.log("Usuario es " + this.usersArrayDDBB[index].id);
+    updateActive(user){
+      console.log("Usuario es " +user.id);
       
-      this.usersArrayDDBB[index].isActive= !this.usersArrayDDBB[index].isActive;
+      user.isActive= !user.isActive;
       // guardar el objeto para actualizar
-      this.userService.updateIsActive(index);
+      console.log(user.isActive);
+      
+      this.userService.updateIsActive(user).subscribe(
+        (val) => {
+            console.log("POST call successful value returned in body");
+            console.log("usuario:" +val);
+            this.reloadData();
+        },
+        response => {
+            console.log("POST call in error", response);
+        },
+        () => {
+            console.log("The POST observable is now completed.");
+            //window.location.reload();
+        }); 
+      this.userService.getUsers();
+
+      console.log("user_actualizado");
+      console.log(this.usersArrayDDBB);
     }
 
 }

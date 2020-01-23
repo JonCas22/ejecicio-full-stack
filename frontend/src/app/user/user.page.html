@@ -18,14 +18,14 @@
   
   <ion-grid>
 
-    <ion-row color="primary" justify-content-center style="border-bottom: 1px solid white; border-bottom-style: dashed;">
+    <ion-row color="primary" class="ion-justify-content-center" style="border-bottom: 1px solid white; border-bottom-style: dashed;">
       <ion-col >Nombre</ion-col >
       <ion-col>Email</ion-col>
       <ion-col>Activo?</ion-col>
       <ion-col>Acción</ion-col>
     </ion-row>
 
-    <ion-row *ngFor="let item of usersArrayDDBB, let i = index" justify-content-center>
+    <ion-row *ngFor="let item of usersArrayDDBB" class="ion-justify-content-center">
 
       <ion-col>
         {{item.nombre_usuario}}
@@ -34,7 +34,7 @@
         {{item.email}}
       </ion-col>
       <ion-col>
-        <ion-toggle name="banana" color="light" [checked]="item.isActive" (click)="updateActive(i)"></ion-toggle> 
+        <ion-toggle name="banana" color="light" [checked]="item.isActive" (click)="updateActive(item )"></ion-toggle> 
       </ion-col>
       <ion-col><ion-icon name="create" (click)="updateTask(i)"></ion-icon> <ion-icon name="trash" (click)="delete(i)"></ion-icon></ion-col> 
 
