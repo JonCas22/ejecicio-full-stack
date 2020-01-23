@@ -38,7 +38,7 @@ export class PublicationController {
     dato.publicado = publication.publicado;
     dato.publico = publication.publico;
     dato.titulo = publication.titulo;
-    return this.publicationService.save(publication);
+    return this.publicationService.save(dato);
     }
     @Delete(':id')
     remove(@Param('id') id: number): Promise<PublicationEntity> {
