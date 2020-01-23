@@ -73,7 +73,7 @@ export class UserPage implements OnInit {
         cssClass: 'alertDanger',
         message: 'Inserta los nuevos valores a actualizar',
         inputs: [{ name: 'nombre', value: item.nombre_usuario,  placeholder: 'Nombre'}, {name:'email', value: item.email, placeholder: 'Email'},
-         {name:'contraseña', value: item.contrasena,  placeholder: 'Contraseña'}],
+         {name:'contraseña', type:"password", value: item.contrasena,  placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Update', handler:  data => {
                      this.userService.updateUser(data, item);
@@ -89,7 +89,7 @@ export class UserPage implements OnInit {
         header: 'Añadir Usuario',
         message: 'Introduce los datos del nuevo usuario',
         inputs: [{ name: 'nombre',  placeholder: 'Nombre'}, {name:'email', placeholder: 'Email'},
-        {name:'contraseña', placeholder: 'Contraseña'}],
+        {name:'contraseña',type:"password", placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Añadir', handler:  data => {
                       this.userService.register(data);
