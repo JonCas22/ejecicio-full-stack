@@ -36,8 +36,8 @@ export class PublicationEntity {
     fecha_creacion: string;
     @Column('text')
     ultima_fecha_modificacion: string;
-    @ManyToOne(type => UserEntity, user => user.publication)
-    user: UserEntity;
+   /* @ManyToOne(type => UserEntity, user => user.publication)
+    user: UserEntity;*/
    
    constructor(){}
 }

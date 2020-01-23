@@ -28,8 +28,8 @@ export class UserEntity {
     fecha_creacion: string;
     @Column('text')
     ultima_fecha_modificacion: string;
-    @OneToMany(type => PublicationEntity, publication => publication.user)
-    publication: PublicationEntity[];
+    /*@OneToMany(type => PublicationEntity, publication => publication.user)
+    publication: PublicationEntity[];*/
    
    constructor(){}
 }
