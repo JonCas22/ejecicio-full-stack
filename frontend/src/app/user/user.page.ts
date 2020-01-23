@@ -52,14 +52,14 @@ export class UserPage implements OnInit {
     alert("has pulsado el usuario =>" + name);
   }
 
-  async delete(index){
+  async delete(item){
     let alert = await this.alertController.create({
       header: 'Estas seguro?',
       cssClass: 'alertPop',
       message: 'Pulsa aceptar si deseas eliminar el usuario',
       buttons: [{ text: 'Cancel', role: 'cancel' },
                 { text: 'Aceptar', handler: ()=>{
-                  this.usersArray.splice(index, 1);
+                  this.userService.deleteUser(item);
                 }
                 }
                ]
@@ -76,7 +76,7 @@ export class UserPage implements OnInit {
          {name:'contraseña', value: item.contrasena,  placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Update', handler:  data => {
-                     this.userService.update(data, item);
+                     this.userService.updateUser(data, item);
                   }
                   }
                  ]

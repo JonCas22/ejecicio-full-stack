@@ -37,11 +37,35 @@ export class UserServiceService {
     };
 
     
-    return this.http.put('http://localhost:3000/user/' + user.id, user, httpOptions)
+    return this.http.put('http://localhost:3000/user/' + user.id, user, httpOptions);
     
   }
 
-  update(data, item){
+  deleteUser(item){
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      })
+    };
+
+    this.http.delete('http://localhost:3000/user/' + item.id, httpOptions).subscribe(
+      (val) => {
+          console.log("DELETE call successful value returned in body");
+          console.log(val);
+          
+      },
+      response => {
+          console.log("DELETE call in error", response);
+      },
+      () => {
+          console.log("The DELETE observable is now completed.");
+          window.location.reload();
+      });;
+
+  }
+
+  updateUser(data, item){
     console.log("Updating");
     console.log(item);
     console.log(data);
