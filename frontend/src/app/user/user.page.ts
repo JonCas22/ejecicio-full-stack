@@ -52,14 +52,14 @@ export class UserPage implements OnInit {
     alert("has pulsado el usuario =>" + name);
   }
 
-  async delete(index){
+  async delete(item){
     let alert = await this.alertController.create({
       header: 'Estas seguro?',
       cssClass: 'alertPop',
       message: 'Pulsa aceptar si deseas eliminar el usuario',
       buttons: [{ text: 'Cancel', role: 'cancel' },
                 { text: 'Aceptar', handler: ()=>{
-                  this.usersArray.splice(index, 1);
+                  this.userService.deleteUser(item);
                 }
                 }
                ]
@@ -67,16 +67,17 @@ export class UserPage implements OnInit {
   await alert.present();
   }
 
-  async updateTask(index) {
+  async updateTask(item) {
     let alert = await this.alertController.create({
         header: 'Update Task?',
         cssClass: 'alertDanger',
         message: 'Inserta los nuevos valores a actualizar',
-        inputs: [{ name: 'nombre', value: this.usersArrayDDBB[index].nombre_usuario,  placeholder: 'Nombre'}, {name:'email', value: this.usersArrayDDBB[index].email, placeholder: 'Email'},
-         {name:'contraseña', value: this.usersArrayDDBB[index].contrasena,  placeholder: 'Contraseña'}],
+        inputs: [{ name: 'nombre', value: item.nombre_usuario,  placeholder: 'Nombre'}, {name:'email', value: item.email, placeholder: 'Email'},
+         {name:'contraseña', value: item.contrasena,  placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Update', handler:  data => {
-                      this.usersArrayDDBB[index].nombre_usuario = data.nombre; this.usersArrayDDBB[index].email = data.email; this.usersArrayDDBB[index].contrasena = data.contraseña;}
+                     this.userService.updateUser(data, item);
+                  }
                   }
                  ]
     });
@@ -91,7 +92,7 @@ export class UserPage implements OnInit {
         {name:'contraseña', placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Añadir', handler:  data => {
-                      this.userService.register(data.nombre, data.email, data.contraseña);
+                      this.userService.register(data);
                      }
                   }
                 ]
@@ -109,7 +110,7 @@ export class UserPage implements OnInit {
       this.userService.updateIsActive(user).subscribe(
         (val) => {
             console.log("POST call successful value returned in body");
-            console.log("usuario:" +val);
+            console.log("usuario:" +val); 
             this.reloadData();
         },
         response => {
