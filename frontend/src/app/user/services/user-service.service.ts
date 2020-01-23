@@ -41,31 +41,34 @@ export class UserServiceService {
     
   }
 
-  register(nombre, email, contraseña) {
+  register(data) {
     // console.log(form.value.name)
-
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1;
-
-    var yyyy = today.getFullYear();
-
-    var currentime = yyyy + "/" + mm + "/" + dd;
-
     try {
-      this.user.email = email;
-      this.user.contrasena = contraseña;
-      this.user.nombre_usuario = nombre;
-      this.user.avatar="";
-      this.user.clave_activacion = "";
-      this.user.grupo_usuarios="default";
-      this.user.version = "1.0";
-      this.user.fecha_creacion = currentime;
-      this.user.ultima_fecha_modificacion = currentime;
-      this.user.isActive = 1;
-      this.user.apiToken = "";
 
-      console.log(this.user);
+      var newUser = new UserEntity();
+
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1;
+
+      var yyyy = today.getFullYear();
+
+      var currentime = yyyy + "/" + mm + "/" + dd;
+      console.log(data);
+
+      newUser.nombre_usuario = data.nombre;
+      newUser.email = data.email;
+      newUser.contrasena = data.contraseña;
+      newUser.avatar="";
+      newUser.clave_activacion = "";
+      newUser.grupo_usuarios="default";
+      newUser.version = "1.0";
+      newUser.fecha_creacion = currentime;
+      newUser.ultima_fecha_modificacion = currentime;
+      newUser.isActive = 1;
+      newUser.apiToken = "";
+
+      console.log(newUser);
 
       //let headers = new HttpHeaders().set('Content-Type', 'application/json');
 
@@ -75,7 +78,7 @@ export class UserServiceService {
         })
       };
     
-      this.http.post('http://localhost:3000/user', this.user, httpOptions)
+      this.http.post('http://localhost:3000/user', newUser, httpOptions)
       .subscribe(
           (val) => {
               console.log("POST call successful value returned in body");

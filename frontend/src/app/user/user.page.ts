@@ -91,7 +91,7 @@ export class UserPage implements OnInit {
         {name:'contraseña', placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Añadir', handler:  data => {
-                      this.userService.register(data.nombre, data.email, data.contraseña);
+                      this.userService.register(data);
                      }
                   }
                 ]
@@ -109,7 +109,7 @@ export class UserPage implements OnInit {
       this.userService.updateIsActive(user).subscribe(
         (val) => {
             console.log("POST call successful value returned in body");
-            console.log("usuario:" +val);
+            console.log("usuario:" +val); 
             this.reloadData();
         },
         response => {
