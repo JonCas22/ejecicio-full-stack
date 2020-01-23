@@ -61,11 +61,11 @@ export class UserPage implements OnInit {
         header: 'Update Task?',
         cssClass: 'alertDanger',
         message: 'Inserta los nuevos valores a actualizar',
-        inputs: [{ name: 'nombre', value: this.usersArray[index].nombre,  placeholder: 'Nombre'}, {name:'email', value: this.usersArray[index].email, placeholder: 'Email'},
-         {name:'contraseña', value: this.usersArray[index].contraseña,  placeholder: 'Contraseña'}],
+        inputs: [{ name: 'nombre', value: this.usersArrayDDBB[index].nombre_usuario,  placeholder: 'Nombre'}, {name:'email', value: this.usersArrayDDBB[index].email, placeholder: 'Email'},
+         {name:'contraseña', value: this.usersArrayDDBB[index].contrasena,  placeholder: 'Contraseña'}],
         buttons: [{ text: 'Cancel', role: 'cancel' },
                   { text: 'Update', handler:  data => {
-                      this.usersArray[index].nombre = data.nombre; this.usersArray[index].email = data.email; this.usersArray[index].contraseña = data.contraseña;}
+                      this.usersArrayDDBB[index].nombre_usuario = data.nombre; this.usersArrayDDBB[index].email = data.email; this.usersArrayDDBB[index].contrasena = data.contraseña;}
                   }
                  ]
     });
