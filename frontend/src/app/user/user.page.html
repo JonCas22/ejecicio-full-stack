@@ -25,16 +25,16 @@
       <ion-col>Acción</ion-col>
     </ion-row>
 
-    <ion-row *ngFor="let item of usersArray, let i = index" justify-content-center>
+    <ion-row *ngFor="let item of usersArrayDDBB, let i = index" justify-content-center>
 
       <ion-col>
-        {{item.nombre}}
+        {{item.nombre_usuario}}
       </ion-col>
       <ion-col>
         {{item.email}}
       </ion-col>
       <ion-col>
-        <ion-toggle name="banana" color="light" checked="isActive(i)" (click)="updateActive(i)"></ion-toggle> 
+        <ion-toggle name="banana" color="light" [checked]="item.isActive" (click)="updateActive(i)"></ion-toggle> 
       </ion-col>
       <ion-col><ion-icon name="create" (click)="updateTask(i)"></ion-icon> <ion-icon name="trash" (click)="delete(i)"></ion-icon></ion-col> 
 
