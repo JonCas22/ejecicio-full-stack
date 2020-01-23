@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { UserEntity } from '../user/user.entity'
 
 @Entity()
 
@@ -35,6 +36,8 @@ export class PublicationEntity {
     fecha_creacion: string;
     @Column('text')
     ultima_fecha_modificacion: string;
+    @ManyToOne(type => UserEntity, user => user.publication)
+    user: UserEntity;
    
    constructor(){}
 }
