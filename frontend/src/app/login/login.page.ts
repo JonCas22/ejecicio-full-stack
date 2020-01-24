@@ -16,12 +16,12 @@ import { LoginServiceService } from './services/login-service.service';
 @Injectable()
 export class LoginPage implements OnInit {
 
-  /*user1:User = new User("Jon", "joncas@gmail.com","1234");
+  user1:User = new User("Jon", "joncas@gmail.com","1234");
   user2:User = new User("Olek", "okel@gmail.com", "4567");
   user3:User = new User("Cris", "cristian@gmail.com", "8910");
   user4:User = new User("Tobi", "tobi1@gmail.com", "1112");
   
-  usersArray:User[]=[this.user1, this.user2, this.user3, this.user4];*/
+  usersArray:User[]=[this.user1, this.user2, this.user3, this.user4];
 
   usersDB:UserEntity[] = [];
 
@@ -60,15 +60,19 @@ export class LoginPage implements OnInit {
   }
 
   async login(form){
-   
-    
     let user = {
       nombre_usuario: form.value.email,
       contrasena: form.value.password
     };
+   
+    this.loginService.login(user).subscribe((datos)=>{
+      console.log(datos);
+      localStorage.setItem('ACCESS_TOKEN', datos.access_token);
+    });
+    
     console.log(user);
     var route = this.router;
-   await this.usersDB.map( await function(item, index){
+   this.usersDB.map( function(item, index){
       if(item.nombre_usuario==form.value.email&&item.contrasena==form.value.password && item.isActive!=0){
          
         route.navigate(['/user']);
@@ -77,11 +81,7 @@ export class LoginPage implements OnInit {
         console.log("Usuario no logeado, usuario/contraseña incorrecta o usuario no activo");
       }
     });
-    
-    await this.loginService.login(user).subscribe((datos)=>{
-      console.log(datos);
-      localStorage.setItem('ACCESS_TOKEN', datos.access_token);
-    });
+  
   }
 
 }
