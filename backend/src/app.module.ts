@@ -8,7 +8,6 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { MenusModule } from './menus/menus.module';
 import { MenuItemModule } from './menu-item/menu-item.module';
-
 @Module({
   imports: [UserModule, 
     TypeOrmModule.forRoot(), PublicationModule, AuthModule, UsersModule, MenusModule, MenuItemModule],
