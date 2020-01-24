@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-const publication_entity_1 = require("../publication/publication.entity");
 let UserEntity = class UserEntity {
     constructor() { }
 };
@@ -62,10 +61,6 @@ __decorate([
     typeorm_1.Column('text'),
     __metadata("design:type", String)
 ], UserEntity.prototype, "ultima_fecha_modificacion", void 0);
-__decorate([
-    typeorm_1.OneToMany(type => publication_entity_1.PublicationEntity, publication => publication.user),
-    __metadata("design:type", Array)
-], UserEntity.prototype, "publication", void 0);
 UserEntity = __decorate([
     typeorm_1.Entity(),
     __metadata("design:paramtypes", [])

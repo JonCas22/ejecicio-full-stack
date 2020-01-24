@@ -8,9 +8,20 @@ export class AuthController{
     @UseGuards(AuthGuard('local'))
     @Post('auth/login')
     async login(@Request() req) {  
-      // console.log(req);    
-      return this.authService.login(req.user);
+      
+        this.authService.validateUser(req.nombre_usuario, req.contrasena).then((datos)=>{
+          return this.authService.login(req.user);
+        });
+
+      
     }
+
+    @UseGuards(AuthGuard())
+    @Get('user')
+    getUser(@Request() req){
+      return "HOLA PACO";
+    }
+    
 
     @UseGuards(AuthGuard('jwt'))
     @Get('profile')
