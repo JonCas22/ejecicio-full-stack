@@ -8,7 +8,10 @@
 </ion-header>
 
 <ion-content color="primary" padding>
-  <form #form="ngForm" (ngSubmit)="login(form)">
+  <div *ngIf="logged == true" (click)="cambia()">
+    <h2>Ya estás logueado</h2>
+  </div>
+  <form #form="ngForm" (ngSubmit)="login(form)" >
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">

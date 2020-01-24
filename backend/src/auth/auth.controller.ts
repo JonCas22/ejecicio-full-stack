@@ -7,14 +7,8 @@ export class AuthController{
     constructor(private readonly authService: AuthService) {}
     // @UseGuards(AuthGuard('local'))
     @Post('auth/login')
-    async login(@Body() req) : Promise<any>{  
-      
-      console.log("DESDE AUTH CONTROLLER REQ", req);
-      
+    async login(@Body() req) : Promise<any>{        
       return this.authService.login(req);
-        
-
-      
     }
 
     @UseGuards(AuthGuard())

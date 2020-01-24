@@ -2294,7 +2294,7 @@
         "signature": "3c8588c1c5f3f394baa606e140eac424deab46ede462461a59e05b75886afd89"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "7df4f0a837639aa0f453ab92bdc0f1709ffb90cf19bb5c3f5cf6e5debac3f4ef",
+        "version": "d73047f197cb71ca85ac271106c6a71420e6abfeb394f66da5e19470a4e9f12b",
         "signature": "471da4bbc8ff9a37729f0684db23c24474528bed8e053cb613a81c79ab38f121"
       },
       "../src/auth/constants.ts": {
@@ -13805,6 +13805,8 @@
       "../src/user/user/user.controller.ts",
       "../src/user/user.module.ts",
       "../src/publication/publication/publication.service.ts",
+      "../src/publication/publication/publication.controller.ts",
+      "../src/publication/publication.module.ts",
       "../src/users/users.service.ts",
       "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
@@ -13836,7 +13838,6 @@
       "../node_modules/@types/passport-strategy/index.d.ts",
       "../node_modules/@types/passport-local/index.d.ts",
       "../src/auth/local.strategy.ts",
-      "../src/auth/auth.controller.ts",
       "../src/auth/constants.ts",
       "../node_modules/@types/passport-jwt/index.d.ts",
       "../src/auth/jwt.strategy.ts",
@@ -13913,8 +13914,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/publication/publication/publication.controller.ts",
-      "../src/publication/publication.module.ts"
+      "../src/auth/auth.controller.ts"
     ]
   },
   "version": "3.7.5"

@@ -12,6 +12,9 @@ export class LoginServiceService {
 
   usersDB = [];
 
+  logged: boolean = true;
+
+
   askForUser(){
     var users = this.getUsers();
     users.subscribe(result=>{
@@ -32,13 +35,14 @@ export class LoginServiceService {
 
   getUsers(): Observable<any>{
        return this.http.get('http://localhost:3000/user/');
-       //console.log("Get: " + JSON.stringify(users));
   }
 
-  login(user): Observable<any>{
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", user);
-    
+  login(user): Observable<any>{    
     return this.http.post('http://localhost:3000/auth/auth/login', user);
+  }
+
+  cambia(){
+    this.logged=!this.logged;
   }
 
 }
