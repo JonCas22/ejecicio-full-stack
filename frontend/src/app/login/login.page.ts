@@ -4,9 +4,8 @@ import { User } from '../models/user';
 import { UserEntity } from '../user/user.entity';
 import { AlertController } from '@ionic/angular';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { UserServiceService } from '../user/services/user-service.service';
+import { LoginServiceService } from './services/login-service.service';
 //import { HttpModule, Http, Response} from '@angular/http';
 
 @Component({
@@ -32,24 +31,33 @@ export class LoginPage implements OnInit {
 
   apiUrl:string = 'http://localhost:3000/user';
 
-  constructor(public alertController: AlertController, private router: Router,
-    private route: ActivatedRoute, private http:HttpClient, private userService:UserServiceService) {
-      this.askForUser();
+  constructor(public alertController: AlertController, private loginService:LoginServiceService, private router: Router,
+    private route: ActivatedRoute, private userService:UserServiceService) {
+
   }
 
   ngOnInit() {    
-    //this.getParams = this.route.params.subscribe((params: Params) => this.getParams = params['user']);
-    this.route.params.subscribe(params => {
-      this.getParams = params;
-    }); 
+    this.reloadData();
+  }
 
-    if(this.getParams==''|| this.getParams==null || this.getParams==undefined){
-      console.log("Ningun parametro");
-      
-    }else{
-      this.saveNewUser(this.getParams);
-    }
-    console.log(this.getParams);
+  ionViewWillEnter(){
+    this.reloadData();
+  }
+
+  reloadData(){
+    this.loginService.getUsers().subscribe(
+      (val) => {
+          console.log("POST call successful value returned in body");
+          console.log(val);
+          this.usersArray = val;
+      },
+      response => {
+          console.log("POST call in error", response);
+      },
+      () => {
+          console.log("The POST observable is now completed.");
+          //window.location.reload();
+      });
   }
 
   login(form){
@@ -63,36 +71,6 @@ export class LoginPage implements OnInit {
         console.log("Usuario no logeado, usuario/contraseña incorrecta o usuario no activo");
       }
     });
-  }
-
-  saveNewUser(user){
-    var newUser = new User(user.nombre, user.email, user.contraseña);
-    this.usersArray.push(newUser);
-    console.log("Nuevo usuario guardado");
-    
-  }
-
-  askForUser(){
-    var users = this.getUsers();
-    users.subscribe(result=>{
-      if(result.code!=200){
-        console.log(result);
-        this.usersDB = result;
-        console.log(this.usersDB);
-        
-      }else{
-        console.log("matar a alguien");
-      }
-    },
-    error=>{
-      console.log(<any>error);
-      
-    })
-  }
-
-  getUsers(): Observable<any>{
-       return this.http.get('http://localhost:3000/user/');
-       //console.log("Get: " + JSON.stringify(users));
   }
 
 }
