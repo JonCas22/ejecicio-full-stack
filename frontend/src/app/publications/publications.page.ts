@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PublicationServiceService } from './services/publication-service.service';
 import { PublicationEntity } from './publication.entity';
+import { ModalPagePage } from '../modal-page/modal-page.page';
 
 @Component({
   selector: 'app-publications',
@@ -12,9 +13,20 @@ import { PublicationEntity } from './publication.entity';
 export class PublicationsPage implements OnInit {
 
   constructor(public alertController: AlertController,
-     private router:Router, private publicationService: PublicationServiceService) {
+     private router:Router, private publicationService: PublicationServiceService,
+     private modalController: ModalController) {
     
    }
+
+   async presentModal(item) {
+    const modal = await this.modalController.create({
+      component: ModalPagePage,
+      componentProps: {
+        'item': item,
+      }
+    });
+    return await modal.present();
+  }
 
   publicationArrayDDBB = [];
   publication:PublicationEntity;
@@ -56,6 +68,12 @@ export class PublicationsPage implements OnInit {
           handler: () => {
             console.log('Confirm Delete');
             this.publicationService.deletePublication(item);
+          }
+        },
+        {
+          text: 'Update',
+          handler: ()=>{
+            this.presentModal(item);
           }
         }
       ]

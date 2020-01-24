@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update Publication</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <form #form="ngForm" (ngSubmit)="updatePublication()">
+    <ion-item>
+      <ion-label>Titulo: </ion-label>
+      <ion-input type="text" [(ngModel)]="publication.titulo" value="" name="titulo" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Entradilla: </ion-label>
+      <ion-textarea [(ngModel)]="publication.entradilla" value = "itemToUpdate.entradilla" name="entradilla" required></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descripción: </ion-label>
+      <ion-textarea [(ngModel)]="publication.texto_completo" value = "itemToUpdate.text_completo" name="texto_completo" required></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tags: </ion-label>
+      <ion-textarea [(ngModel)]="publication.tags" value = "itemToUpdate.tags" name="tags" required></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Publico: </ion-label>
+      <ion-select [(ngModel)]="publication.publico" value = "itemToUpdate.publico" name="publico" required>
+        <ion-select-option value=1>Si</ion-select-option>
+        <ion-select-option value=0>No</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Categoria: </ion-label>
+      <ion-select [(ngModel)]="publication.tipo" value = "itemToUpdate.tipo" name="tipo" required>
+        <ion-select-option value="noticia">Noticia</ion-select-option>
+        <ion-select-option value="default">Default</ion-select-option>
+        <ion-select-option value="alerta">Alerta</ion-select-option>
+        <ion-select-option value="personal">Personal</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Publicado: </ion-label>
+      <ion-select [(ngModel)]="publication.publicado" value = "itemToUpdate.publicado" name="publicado" required>
+        <ion-select-option value=1>Si</ion-select-option>
+        <ion-select-option value=0>No</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Imagen URL: </ion-label>
+      <ion-input type="text" [(ngModel)]="publication.imagen_portada" value = "itemToUpdate.imagen_portada" name="imagen" required></ion-input>
+    </ion-item>
+    <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">GUARDAR PUBLICACION</ion-button>
+  </form>
+
+</ion-content>
