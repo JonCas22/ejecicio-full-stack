@@ -61,15 +61,25 @@ export class LoginPage implements OnInit {
   }
 
   login(form){
+
+    let         user = {
+      nombre_usuario: form.value.email,
+      contrasena: form.value.password
+    }
+
     console.log(form.value);
     var route = this.router;
-    this.usersDB.map(function(item, index){
+     this.usersDB.map( function(item, index){
       if(item.nombre_usuario==form.value.email&&item.contrasena==form.value.password && item.isActive!=0){
         console.log("Usuario logeado");
-        route.navigate(['/user']);
       }else{
         console.log("Usuario no logeado, usuario/contraseña incorrecta o usuario no activo");
       }
+    });
+    
+    this.loginService.login(user).subscribe((datos)=>{
+      console.log(datos);
+      localStorage.setItem('ACCESS_TOKEN', datos.access_token);
     });
   }
 

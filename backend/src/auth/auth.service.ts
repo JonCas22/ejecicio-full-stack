@@ -22,11 +22,13 @@ export class AuthService {
     return null;
   }
 
-  async login(user: any) {
+  login(user: any) {
     // console.log(user);
-    const payload = { username: user.username, sub: user.userId };
+    console.log(user);
+    
+    const payload = { nombre_usuario: user.nombre_usuario, sub: user.contrasena };
     return {
-      access_token: this.jwtService.sign(payload),
+      access_token: this.jwtService.sign(payload)
     };
   }
   }
