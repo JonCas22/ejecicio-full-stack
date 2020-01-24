@@ -23,7 +23,6 @@ export class PublicationController {
     @Put(':id')
     async update(@Param('id') id: number, @Body() user: PublicationEntity): Promise<PublicationEntity> {
     await this.publicationService.findById(id);
-    user.id = id;
     return this.publicationService.save(user);
     }
     @Delete(':id')

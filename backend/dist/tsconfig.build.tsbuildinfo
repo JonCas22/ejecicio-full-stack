@@ -2162,7 +2162,7 @@
         "signature": "b6c14d1814b8c394115fcbd8fb1f67d834ab61c6e5a046f2de9a77d8058df9e3"
       },
       "../src/publication/publication/publication.controller.ts": {
-        "version": "5feeae48704292e2669a11568ed029c5473a03f5a3f59834ca27f9e5b4f9a562",
+        "version": "37960bfd362c53cbddea346c1e52483358c47bb77bbf1c7d3e27b784728a243e",
         "signature": "ec877c2ea7f489e1f335b4d255dc9b03dd4cef9fec23da1e851aa785598cb267"
       },
       "../src/publication/publication.module.ts": {
@@ -13753,9 +13753,10 @@
       "../node_modules/@nestjs/typeorm/dist/index.d.ts",
       "../node_modules/@nestjs/typeorm/index.d.ts",
       "../src/user/user/user.service.ts",
+      "../src/user/user/user.controller.ts",
+      "../src/user/user.module.ts",
       "../src/publication/publication.entity.ts",
       "../src/publication/publication/publication.service.ts",
-      "../src/publication/publication/publication.controller.ts",
       "../src/publication/publication.module.ts",
       "../src/users/users.service.ts",
       "../node_modules/@types/jsonwebtoken/index.d.ts",
@@ -13861,8 +13862,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/user/user/user.controller.ts",
-      "../src/user/user.module.ts"
+      "../src/publication/publication/publication.controller.ts"
     ]
   },
   "version": "3.7.5"
