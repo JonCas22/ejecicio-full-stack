@@ -49,7 +49,7 @@ export class LoginPage implements OnInit {
       (val) => {
           console.log("POST call successful value returned in body");
           console.log(val);
-          this.usersArray = val;
+          this.usersDB = val;
       },
       response => {
           console.log("POST call in error", response);
