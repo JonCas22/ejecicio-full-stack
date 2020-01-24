@@ -5,6 +5,7 @@ const app_module_1 = require("./app.module");
 async function bootstrap() {
     var cors = require('cors');
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    app.enableCors();
     app.use(cors());
     await app.listen(3000);
 }

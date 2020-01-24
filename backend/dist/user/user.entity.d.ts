@@ -1,4 +1,3 @@
-import { PublicationEntity } from '../publication/publication.entity';
 export declare class UserEntity {
     id: number;
     nombre_usuario: string;
@@ -12,6 +11,5 @@ export declare class UserEntity {
     version: string;
     fecha_creacion: string;
     ultima_fecha_modificacion: string;
-    publication: PublicationEntity[];
     constructor();
 }
