@@ -11,6 +11,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Interceptores } from './interceptores';
+import { ModalPagePage } from './modal-page/modal-page.page';
+import { ModalPagePageModule } from './modal-page/modal-page.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +22,7 @@ import { Interceptores } from './interceptores';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    ModalPagePageModule,
     HttpModule
   ],
   providers: [

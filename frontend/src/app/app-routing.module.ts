@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'add-publication',
     loadChildren: () => import('./add-publication/add-publication.module').then( m => m.AddPublicationPageModule)
+  },
+  {
+    path: 'modal-page',
+    loadChildren: () => import('./modal-page/modal-page.module').then( m => m.ModalPagePageModule)
   }
 
 ];
