@@ -29,7 +29,7 @@ export class PublicationController {
     }*/
 
     @Put(':id')
-    async update(@Param('id') id: number, @Body() publication: PublicationEntity): Promise<PublicationEntity> {
+    /*async update(@Param('id') id: number, @Body() publication: PublicationEntity): Promise<PublicationEntity> {
     let dato = await this.publicationService.findById(id);
     dato.autor = publication.autor;
     dato.entradilla = publication.entradilla;
@@ -38,7 +38,10 @@ export class PublicationController {
     dato.publicado = publication.publicado;
     dato.publico = publication.publico;
     dato.titulo = publication.titulo;
-    return this.publicationService.save(dato);
+    return this.publicationService.save(dato);*/
+    async update(@Param('id') id: number, @Body() user: PublicationEntity): Promise<PublicationEntity> {
+    await this.publicationService.findById(id);
+    return this.publicationService.save(user);
     }
     @Delete(':id')
     remove(@Param('id') id: number): Promise<PublicationEntity> {

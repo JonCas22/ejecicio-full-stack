@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AlertController, NavParams } from '@ionic/angular';
+import { AlertController, NavParams, ModalController } from '@ionic/angular';
 import { PublicationServiceService } from '../publications/services/publication-service.service';
 
 @Component({
@@ -12,13 +12,11 @@ export class ModalPagePage implements OnInit {
   @Input() item: {};
   itemToUpdate = {};
 
-  constructor(private alertController:AlertController,
+  constructor(private alertController:AlertController, private modalCtrl: ModalController,
      private publicationService:PublicationServiceService, navParams: NavParams) { 
       console.log(navParams.get('item'));
-      this.itemToUpdate = navParams.get('item');
-      console.log(this.itemToUpdate);
-      
-
+      this.publication = navParams.get('item');
+    
      }
 
   publication = {};
@@ -30,6 +28,14 @@ export class ModalPagePage implements OnInit {
 
     this.publicationService.updatePublication(this.publication);
 
+  }
+
+  dismiss() {
+    // using the injected ModalController this page
+    // can "dismiss" itself and optionally pass back data
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });
   }
 
 }

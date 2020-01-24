@@ -2162,8 +2162,8 @@
         "signature": "b6c14d1814b8c394115fcbd8fb1f67d834ab61c6e5a046f2de9a77d8058df9e3"
       },
       "../src/publication/publication/publication.controller.ts": {
-        "version": "e1b9bb62929ebe32034f46b250a90de2a3a4da324b135319bd0b3844ef8319df",
-        "signature": "fea866b17cde83e2716742441f909964a08ef80d7a292bc1167b188df5d0cb70"
+        "version": "9b8fcc0653f2270bbd2c1366e9fffac83caf97137b17b27e221dfde84c02fc66",
+        "signature": "ec877c2ea7f489e1f335b4d255dc9b03dd4cef9fec23da1e851aa785598cb267"
       },
       "../src/publication/publication.module.ts": {
         "version": "daedaf096022b5823402d6162a7f9c908756048e2e170815055cd56a54944449",
@@ -13805,8 +13805,6 @@
       "../src/user/user/user.controller.ts",
       "../src/user/user.module.ts",
       "../src/publication/publication/publication.service.ts",
-      "../src/publication/publication/publication.controller.ts",
-      "../src/publication/publication.module.ts",
       "../src/users/users.service.ts",
       "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
@@ -13815,6 +13813,7 @@
       "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts",
       "../node_modules/@nestjs/jwt/dist/index.d.ts",
       "../node_modules/@nestjs/jwt/index.d.ts",
+      "../src/auth/auth.service.ts",
       "../src/users/users.module.ts",
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts",
       "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts",
@@ -13836,11 +13835,15 @@
       "../node_modules/@types/passport/index.d.ts",
       "../node_modules/@types/passport-strategy/index.d.ts",
       "../node_modules/@types/passport-local/index.d.ts",
+      "../src/auth/local.strategy.ts",
+      "../src/auth/auth.controller.ts",
       "../src/auth/constants.ts",
       "../node_modules/@types/passport-jwt/index.d.ts",
       "../src/auth/jwt.strategy.ts",
+      "../src/auth/auth.module.ts",
       "../src/menus/menus.module.ts",
       "../src/menu-item/menu-item.module.ts",
+      "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -13910,11 +13913,8 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/auth/auth.service.ts",
-      "../src/auth/auth.module.ts",
-      "../src/auth/auth.controller.ts",
-      "../src/auth/local.strategy.ts",
-      "../src/app.module.ts"
+      "../src/publication/publication/publication.controller.ts",
+      "../src/publication/publication.module.ts"
     ]
   },
   "version": "3.7.5"
