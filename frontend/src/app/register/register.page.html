@@ -24,7 +24,7 @@
               <ion-input name="email" type="email" placeholder="tu@email.com" [(ngModel)]="user.email" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="password" type="password" placeholder="Contraseña" [(ngModel)]="user.contrasena" required></ion-input>
+              <ion-input name="password" type="password" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" [(ngModel)]="user.contrasena" required></ion-input>
             </ion-item>
             <ion-item>
               <ion-input name="confirm" type="password" placeholder="Repite la contraseña" ngModel required></ion-input>
