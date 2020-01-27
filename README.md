@@ -49,9 +49,9 @@ podemos verificar que  todo esta correcto en http://localhost:8100
 
 ## Tecnologías Base
 
-    La Base de datos a utilizar en Backend en MongoDB -----(100%)
-    El backend deberá estar escrito en NodeJS y ExpressJS y se restringirá a un API Rest o como mucho un GraphQL----- (100%)
-    El Frontend de la aplicación se realizará en Angular (no Angular JS) (v)
+La Base de datos a utilizar en Backend en MongoDB -----(100%)
+El backend deberá estar escrito en NodeJS y ExpressJS y se restringirá a un API Rest o como mucho un GraphQL----- (100%)
+El Frontend de la aplicación se realizará en Angular (no Angular JS) (v)
 
 ## Modelo de Datos
 
@@ -66,17 +66,17 @@ podemos verificar que  todo esta correcto en http://localhost:8100
  Menu Item: id, título, nombre, icono (string), posicion_icono(string), url, autor, ultimo_editor,  versión, fecha_creacion, ultima_fecha_modif 
 
 
-    Los permisos de aplicarán por grupo al que pertenezca el usuario: admin - control total; Editor- Crear, Editar y borrar publicaciones y publicarlas o despublicarlas; Usuario Redactor- crear publicaciones, modificar propias; Visitante - Ver publicaciones publicadas y menus, subscriptor - Ver publcaciones de subscripción
+Los permisos de aplicarán por grupo al que pertenezca el usuario: admin - control total; Editor- Crear, Editar y borrar publicaciones y publicarlas o despublicarlas; Usuario Redactor- crear publicaciones, modificar propias; Visitante - Ver publicaciones publicadas y menus, subscriptor - Ver publcaciones de subscripción
 -------(80%)
 
 ## Backend:
 
 
-    Crea un backend que permita gestionar el registro, login en el servicio REST y la gestión de Usuarios
-    Disponer de la opción de dar de alta un subscriptor directamente sin pasar por el registro
-    Crea un backend REST para el resto de entidades: Publicaciones y menús
-    Todos los acceso al backend de datos deberá realizarse con un TOKEN API generado por el servicio de usuarios
-    El backend tirará de la base de datos MongoDB
+Crea un backend que permita gestionar el registro, login en el servicio REST y la gestión de Usuarios
+Disponer de la opción de dar de alta un subscriptor directamente sin pasar por el registro
+Crea un backend REST para el resto de entidades: Publicaciones y menús
+Todos los acceso al backend de datos deberá realizarse con un TOKEN API generado por el servicio de usuarios
+El backend tirará de la base de datos MongoDB
 ------(faltan detalles en el token)
 
 
@@ -85,13 +85,13 @@ podemos verificar que  todo esta correcto en http://localhost:8100
 
 
 
-    Crea un frontend Angular que sea capaz de registrarse, loguearse en el backend de usuarios
-    Desde el frontend deberemos ser capaces de subscribirnos y dessubscribirnos al boletín, mediante un email y un Nombre de Usuario
-    El Frontend deberá presentar el menú principal de contenidos (Backend Menús)
-    Deberá tener un servicio de consulta al backend de datos (BackEnd Publicaciones)
-    Deberá presentar una plantilla por publicación
-    Presentar el listado (paginado) las últimas publicaciones
-    Tendrá una parte pública par ver los menús y contenidos públicos
-    Deberá disponer de un area de administración para gestionar menús, publicaciones y subscriptores. -----(80%)
+Crea un frontend Angular que sea capaz de registrarse, loguearse en el backend de usuarios
+Desde el frontend deberemos ser capaces de subscribirnos y dessubscribirnos al boletín, mediante un email y un Nombre de Usuario
+El Frontend deberá presentar el menú principal de contenidos (Backend Menús)
+Deberá tener un servicio de consulta al backend de datos (BackEnd Publicaciones)
+Deberá presentar una plantilla por publicación
+Presentar el listado (paginado) las últimas publicaciones
+Tendrá una parte pública par ver los menús y contenidos públicos
+Deberá disponer de un area de administración para gestionar menús, publicaciones y subscriptores. -----(80%)
 
   
