@@ -45,16 +45,15 @@ Con esto tendremos nuesto proyecto corriendo
 
 podemos verificar que  todo esta correcto en http://localhost:8100
 
-## TODO
 
 
-##Tecnologías Base
+## Tecnologías Base
 
     La Base de datos a utilizar en Backend en MongoDB -----(100%)
     El backend deberá estar escrito en NodeJS y ExpressJS y se restringirá a un API Rest o como mucho un GraphQL----- (100%)
     El Frontend de la aplicación se realizará en Angular (no Angular JS) (v)
 
-##Modelo de Datos
+## Modelo de Datos
 
 
  Usuarios: ID, Nombre de usuario(único), email(único), avatar (string - url imagen del usuario), contraseña encriptada, activo (boolean), clave_activación (hash), grupos de usuarios ['admin','redactor','editor', 'subscriber', 'visitor'], API_TOKEN_KEY, versión, fecha_creacion, ultima_fecha_modif
@@ -70,7 +69,7 @@ podemos verificar que  todo esta correcto en http://localhost:8100
     Los permisos de aplicarán por grupo al que pertenezca el usuario: admin - control total; Editor- Crear, Editar y borrar publicaciones y publicarlas o despublicarlas; Usuario Redactor- crear publicaciones, modificar propias; Visitante - Ver publicaciones publicadas y menus, subscriptor - Ver publcaciones de subscripción
 -------(80%)
 
-##Backend:
+## Backend:
 
 
     Crea un backend que permita gestionar el registro, login en el servicio REST y la gestión de Usuarios
@@ -82,7 +81,7 @@ podemos verificar que  todo esta correcto en http://localhost:8100
 
 
 
-##Front End 
+## Front End 
 
 
 
