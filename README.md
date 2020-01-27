@@ -10,7 +10,7 @@ https://github.com/JonCas22/ejecicio-full-stack.git
 4º Abrimos  una terminal
 
 5ºen la terminal escribimos los siguientes comandos:
-	5.1 cd frontend/
+	5.1 ##cd frontend/
 		5.2 npm install (esto instalara node_muodule)
 			5.3  ionic serve 
 
