@@ -8,9 +8,15 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { MenusModule } from './menus/menus.module';
 import { MenuItemModule } from './menu-item/menu-item.module';
+import { MongoModule } from './mongo/mongo.module';
+import { MongooseModule } from '@nestjs/mongoose'
+
 @Module({
   imports: [UserModule, 
-    TypeOrmModule.forRoot(), PublicationModule, AuthModule, UsersModule, MenusModule, MenuItemModule],
+    TypeOrmModule.forRoot(), PublicationModule, AuthModule, UsersModule, MenusModule, MenuItemModule, MongoModule, 
+    MongooseModule.forRoot('mongodb://localhost/test',
+    { useNewUrlParser: true, useUnifiedTopology: true })
+  ],
   controllers: [AppController],
   providers: [AppService]
 })
