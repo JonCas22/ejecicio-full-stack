@@ -14,12 +14,15 @@ const typeorm_1 = require("@nestjs/typeorm");
 const publication_module_1 = require("./publication/publication.module");
 const auth_module_1 = require("./auth/auth.module");
 const users_module_1 = require("./users/users.module");
+const mongo_module_1 = require("./mongo/mongo.module");
+const mongoose_1 = require("@nestjs/mongoose");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [user_module_1.UserModule,
-            typeorm_1.TypeOrmModule.forRoot(), publication_module_1.PublicationModule, auth_module_1.AuthModule, users_module_1.UsersModule],
+            typeorm_1.TypeOrmModule.forRoot(), publication_module_1.PublicationModule, auth_module_1.AuthModule, users_module_1.UsersModule, mongo_module_1.MongoModule,
+            mongoose_1.MongooseModule.forRoot('mongodb://localhost/test', { useNewUrlParser: true, useUnifiedTopology: true }),],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService]
     })
